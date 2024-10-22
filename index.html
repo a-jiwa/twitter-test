@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Twitter Timelines</title>
+    <style>
+        /* Add default border for each div */
+        div[data-account] {
+            border: 2px solid red; /* Red border indicates not loaded */
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        div[data-account][data-loaded="true"] {
+            border-color: green; /* Green border indicates loaded */
+        }
+        /* Style for the overall container */
+        #all-timelines-container {
+            border: 4px solid black;
+            padding: 20px;
+        }
+        #all-timelines-container[data-all-loaded="true"] {
+            border-color: blue; /* Change border to blue when all are loaded */
+        }
+        /* Style for the loading times table */
+        #loading-times-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #loading-times-table th, #loading-times-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        #loading-times-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Twitter Timelines Embed</h1>
+<!-- Overall container for all timelines -->
+<div id="all-timelines-container">
+    <!-- Embedded Twitter Timelines with Custom Settings -->
+    <div data-account="AP">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/AP?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by AP</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="business">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/business">Tweets by Business</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="economics">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/economics">Tweets by Economics</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="ReutersBiz">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/ReutersBiz">Tweets by Reuters Business</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="WSJ">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/WSJ">Tweets by Wall Street Journal</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="FT">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/FT">Tweets by Financial Times</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="BBCWorld">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/BBCWorld">Tweets by BBC World</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="BloombergAsia">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/BloombergAsia">Tweets by Bloomberg Asia</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="YahooFinance">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/YahooFinance">Tweets by Yahoo Finance</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="WSJmarkets">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/WSJmarkets">Tweets by WSJ Markets</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="ftfinancenews">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/ftfinancenews">Tweets by FT Finance News</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="bankofengland">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/bankofengland">Tweets by Bank of England</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="IMFNews">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/IMFNews">Tweets by IMF</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="Agenzia_Ansa">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/Agenzia_Ansa?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by Agenzia Ansa</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div data-account="AFP">
+        <a class="twitter-timeline" data-width="500" data-height="200" data-dnt="true" href="https://twitter.com/AFP?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by AFP</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<!-- Table to display loading times -->
+<h2>Loading Times</h2>
+<table id="loading-times-table">
+    <thead>
+    <tr>
+        <th>Account</th>
+        <th>Loading Time (ms)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Rows will be added here dynamically -->
+    </tbody>
+</table>
+
+<!-- JavaScript to check if timelines are loaded and log times -->
+<script>
+    const loadStartTime = Date.now();
+    const loadingTimes = {};
+
+    // Function to log and display loading time for a specific account
+    function logLoadingTime(account, loadTime) {
+        loadingTimes[account] = loadTime;
+        const tableBody = document.querySelector('#loading-times-table tbody');
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${account}</td><td>${loadTime}</td>`;
+        tableBody.appendChild(row);
+    }
+
+    // Function to check if the timelines have loaded
+    function checkTimelinesLoaded() {
+        const divs = document.querySelectorAll('div[data-account]');
+        let allLoaded = true;
+
+        divs.forEach(div => {
+            const account = div.getAttribute('data-account');
+            const height = div.offsetHeight;
+            // Check if the height exceeds the threshold (indicating it's loaded)
+            if (height > 200 && !div.hasAttribute('data-loaded')) {
+                const loadTime = Date.now() - loadStartTime;
+                div.setAttribute('data-loaded', 'true');
+                logLoadingTime(account, loadTime);
+            } else if (!div.hasAttribute('data-loaded')) {
+                allLoaded = false;
+            }
+        });
+
+        // If all divs are loaded, update the overall container
+        if (allLoaded) {
+            document.getElementById('all-timelines-container').setAttribute('data-all-loaded', 'true');
+            const totalLoadTime = Date.now() - loadStartTime;
+            console.log('All timelines have loaded');
+            console.log('Total load time: ' + totalLoadTime + 'ms');
+            logLoadingTime('All Timelines', totalLoadTime);
+            clearInterval(interval); // Stop the interval once all are loaded
+        }
+    }
+
+    // Set an interval to check for loaded timelines periodically
+    const interval = setInterval(checkTimelinesLoaded, 1000);
+
+    // Optionally, stop checking after some time to avoid infinite checking
+    setTimeout(() => clearInterval(interval), 30000); // Stop after 30 seconds
+</script>
+</body>
+</html>
